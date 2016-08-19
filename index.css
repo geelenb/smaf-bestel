@@ -1,0 +1,62 @@
+* {
+	font-family: 'Karla', sans-serif !important; 
+}
+
+span.mdl-layout-title {
+	margin: auto;
+	font-weight: bold;
+	font-size: xx-large;
+}
+
+.mdl-textfield {
+	margin: 0 auto;
+	display: block;
+}
+
+label {
+	text-align: center;
+}
+
+#bestellen .page-content {
+	padding-top: 3vh;
+}
+
+@media (max-width: 1099px) { #bestellen .page-content { column-count: 1; }}
+@media (min-width: 1100px) { #bestellen .page-content { column-count: 2; }}
+@media (min-width: 1700px) { #bestellen .page-content { column-count: 3; }}
+
+.mdl-card {
+	width: 550px;
+	margin: 0px auto 24px;
+	max-width: 95vw;
+	min-height: 12px;
+	/*break-inside: avoid-column;*/
+}
+
+td {
+    padding: .4vw .8vw;
+}
+
+table:first-child {
+    width: 100%;
+}
+
+img.drink-icon {
+	max-height: 2em;
+	padding-top: .2vw;
+	padding-bottom: .2vw;
+}
+
+#progressbar {
+	position: fixed;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    transition: bottom .5s ease-in-out;
+}
+
+i.mdl-list__item-avatar {
+	background-size: 100% 100% !important;
+	background-repeat: no-repeat !important;
+}
