@@ -70,6 +70,11 @@ function undo(elem) {
 }
 
 function filter(elem) {
+	kaarten = document.querySelectorAll('.jaarkaart')
+	for (var i = kaarten.length - 1; i >= 0; i--) {
+		kaarten[i].style.display = 'none'
+	}
+
 	trs = document.querySelectorAll('#bestellen tr')
 	for (var i = 0; i < trs.length; i++) {
 		tr = trs[i]
@@ -80,6 +85,7 @@ function filter(elem) {
 			tr.style.display = "table-row"
 
 			kaart = tr.parentElement.parentElement.parentElement
+			kaart.style.display = ''
 		}
 	}
 }
