@@ -29,7 +29,6 @@ $q2 = $mysqli->query($query2);
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = no">
 		<meta name="generator" content="SMAF Bier" />
-		<title>SMAF Bier</title>
 
 		<meta name="theme-color" content="#ffc107"><!-- Chrome for Android theme color -->
 		<link rel="manifest" href="manifest.json"><!-- Web Application Manifest -->
