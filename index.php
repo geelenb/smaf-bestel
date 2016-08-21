@@ -114,7 +114,7 @@ function convert_utf8( $string ) {
 									<td>
 										<?php echo htmlentities(convert_utf8($u['full_name'])); ?>
 									</td>
-									<td>
+									<td class="icon-td">
 										<a href="#" 
 										   onclick="iconClicked(this)" 
 										   class='mdl-badge mdl-badge--overlap' 
@@ -125,7 +125,7 @@ function convert_utf8( $string ) {
 											<img class='drink-icon' src="img/cola.jpg" />
 										</a>
 									</td>
-									<td>
+									<td class="icon-td">
 										<a href="#" 
 										   onclick="iconClicked(this)" 
 										   class='mdl-badge mdl-badge--overlap' 
@@ -136,7 +136,7 @@ function convert_utf8( $string ) {
 											<img class='drink-icon' src="img/bier.png" />
 										</a>
 									</td>
-									<td>
+									<td class="icon-td">
 										<a href="#" 
 										   onclick="iconClicked(this)" 
 										   class='mdl-badge mdl-badge--overlap' 

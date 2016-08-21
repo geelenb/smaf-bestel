@@ -34,7 +34,12 @@ label {
 }
 
 td {
-    padding: .4vw .8vw;
+    padding: 1vh 2vw;
+}
+
+.icon-td {
+	text-align: right;
+	padding-left: 0vw;
 }
 
 table:first-child {
