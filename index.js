@@ -74,7 +74,7 @@ function filter(elem) {
 	for (var i = 0; i < trs.length; i++) {
 		tr = trs[i]
 
-		if (tr.innerText.toUpperCase().indexOf(elem.value.toUpperCase()) === -1) {
+		if (tr.dataset.naam.indexOf(elem.value.toUpperCase()) === -1) {
 			tr.style.display = "none"
 		} else {
 			tr.style.display = "table-row"

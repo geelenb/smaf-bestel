@@ -100,9 +100,9 @@ $q2 = $mysqli->query($query2);
 
 										$prev_jaar = $u['jaar'];
 								?>
-								<tr>
+								<tr data-naam="<?php echo htmlentities(strtoupper($u['full_name'])); ?>">
 									<td>
-										<?php echo $u['full_name']?>		
+										<?php echo htmlentities($u['full_name']) ?>
 									</td>
 									<td>
 										<a href="#" 
@@ -111,7 +111,7 @@ $q2 = $mysqli->query($query2);
 										   data-badge='<?php echo$u['cola'];?>' 
 										   data-uid='<?php echo $u['uid'];?>'
 										   data-drank='cola'
-										   data-naam='<?php echo $u['full_name']?>'>
+										   data-naam='<?php echo htmlentities($u['full_name'])?>'>
 											<img class='drink-icon' src="img/cola.jpg" />
 										</a>
 									</td>
@@ -122,7 +122,7 @@ $q2 = $mysqli->query($query2);
 										   data-badge='<?php echo $u['bier'];?>' 
 										   data-uid='<?php echo $u['uid'];?>'
 										   data-drank='bier'
-										   data-naam='<?php echo $u['full_name']?>'>
+										   data-naam='<?php echo htmlentities($u['full_name'])?>'>
 											<img class='drink-icon' src="img/bier.png" />
 										</a>
 									</td>
@@ -133,7 +133,7 @@ $q2 = $mysqli->query($query2);
 										   data-badge='<?php echo$u['duvel'];?>'
 										   data-uid='<?php echo $u['uid'];?>'
 										   data-drank='duvel'
-										   data-naam='<?php echo $u['full_name']?>'>
+										   data-naam='<?php echo htmlentities($u['full_name'])?>'>
 											<img class='drink-icon' src="img/duvel.png" />
 										</a>
 									</td>
@@ -163,8 +163,7 @@ $q2 = $mysqli->query($query2);
 							<li class="mdl-list__item mdl-list__item--two-line">
 								<span class="mdl-list__item-primary-content">
 									<i class="material-icons mdl-list__item-avatar" style="background: url(http://smaf.be/<?php echo $u['picture']?>)"></i>
-									
-									<span><?php echo $i . '. 	' . $u['full_name'] ?></span>
+									<span><?php echo $i . '. 	' . htmlentities(strtoupper($u['full_name'])) ?></span>
 									<span class="mdl-list__item-sub-title"><?php echo $u['score'] ?> km</span>
 								</span>
 							</li>
