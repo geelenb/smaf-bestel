@@ -1,4 +1,4 @@
-<?php # TODO : wachtwoord-shit
+<?php
 include_once 'php/database.php';
 include_once 'php/password-protection.php';
 
@@ -25,8 +25,30 @@ $q2 = $mysqli->query($query2);
 	<head>
 		<title>SMAF Bier</title>
 		<script src="./material.min.js"></script>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		
+		<meta charset="utf-8">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = no">
+		<meta name="generator" content="SMAF Bier" />
+		<title>SMAF Bier</title>
+
+		<meta name="theme-color" content="#ffc107"><!-- Chrome for Android theme color -->
+		<link rel="manifest" href="manifest.json"><!-- Web Application Manifest -->
+
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="application-name" content="SMAF Bier">
+		<link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+		<!-- Add to homescreen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<meta name="apple-mobile-web-app-title" content="SMAF Bier">
+		<link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+		<meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+		<meta name="msapplication-TileColor" content="#ffc107">
+
+		<!-- normale boel -->
 		<link rel="stylesheet" href="./material.min.css" />
 		<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.2.0/material.amber-yellow.min.css" />
 		<link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
@@ -34,7 +56,7 @@ $q2 = $mysqli->query($query2);
 		<script src='index.js'></script>
 		<style type="text/css">
 			main {
-				background: <?php 
+				background: <?php # night theme
 								if (date("H") < '06' || date("H") > '18') {
 									echo '#222';
 								} else {
