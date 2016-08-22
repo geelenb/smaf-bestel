@@ -11,7 +11,11 @@ $query1 = "SELECT full_name, bier.*, jaar " .
 
 $q1 = $mysqli->query($query1);
 
+<<<<<<< HEAD
 $query2 = "SELECT users.uid, jaar, full_name, picture, female, (bier.cola + bier.bier + 2 * bier.duvel) as score " .
+=======
+$query2 = "SELECT users.uid, jaar, full_name, picture, (bier.cola + bier.bier + 2 * bier.duvel) as score " .
+>>>>>>> dc22dcab24d7411503d8fc67e3cc9c700bc28112
           "FROM `bier` " .
           "INNER JOIN users ON users.uid = bier.uid " .
           "INNER JOIN users_groups on users_groups.uid = bier.uid " .
@@ -221,7 +225,6 @@ function convert_utf8( $string ) {
 									<?php if ($u['jaar'] === $ploeg) { ?>
 											<i class="mdl-list__item-avatar" style="background: url(img/team.png); float:right"></i>
 									<?php } ?>
-
 									<span><?php echo $i . '. 	' . convert_utf8($u['full_name']) ?></span>
 									<span class="mdl-list__item-sub-title"><?php echo $u['score'] ?> km</span>
 								</span>
