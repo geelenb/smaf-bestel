@@ -28,7 +28,7 @@ function iconClicked(elem) {
 					actionText: 'Undo'
 				};
 				snackbar.MaterialSnackbar.showSnackbar(data);
-
+				document.querySelector("#refreshbar").style.display = ""
 			} else {
 				snackbar.MaterialSnackbar.showSnackbar({message: 'FOUT bij bestellen voor ' + elem.naam})
 			}
