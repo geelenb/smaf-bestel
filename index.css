@@ -34,7 +34,7 @@ label {
 }
 
 td {
-    padding: 1vh 2vw;
+	padding: 1vh 2vw;
 }
 
 .icon-td {
@@ -43,7 +43,7 @@ td {
 }
 
 table:first-child {
-    width: 100%;
+	width: 100%;
 }
 
 img.drink-icon {
@@ -54,11 +54,11 @@ img.drink-icon {
 
 #progressbar {
 	position: fixed;
-    bottom: -10px;
-    left: 0;
-    width: 100%;
-    z-index: 2;
-    transition: bottom .5s ease-in-out;
+	bottom: -10px;
+	left: 0;
+	width: 100%;
+	z-index: 2;
+	transition: bottom .5s ease-in-out;
 }
 
 #ranking .mdl-card {
@@ -72,21 +72,21 @@ i.mdl-list__item-avatar {
 
 div#refreshbar {
 	background: #ffd600; 
-    z-index: 2;
-    position: relative;
+	z-index: 2;
+	position: relative;
 	padding: 12px;
-    text-align: center;
+	text-align: center;
 }
 
 #refreshbar > span {
 	color: white;
-    font-size: large;
+	font-size: large;
 }
 
 #refreshlink {
 	color: white;
-    font-weight: bold;
-    text-decoration: none;
-    border-bottom-width: 1px;
-    border-bottom-style: dotted;
+	font-weight: bold;
+	text-decoration: none;
+	border-bottom-width: 1px;
+	border-bottom-style: dotted;
 }
