@@ -11,7 +11,7 @@ $query1 = "SELECT full_name, bier.*, jaar " .
 
 $q1 = $mysqli->query($query1);
 
-$query2 = "SELECT users.uid, jaar, full_name, picture, (bier.cola + bier.bier + 2 * bier.duvel) as score " .
+$query2 = "SELECT users.uid, jaar, full_name, picture, female, (bier.cola + bier.bier + 2 * bier.duvel) as score " .
           "FROM `bier` " .
           "INNER JOIN users ON users.uid = bier.uid " .
           "INNER JOIN users_groups on users_groups.uid = bier.uid " .
@@ -190,6 +190,7 @@ function convert_utf8( $string ) {
 						<?php
 							$i = 1;
 							$wit_found = false;
+							$roze_found = false;
 							while($u = $q2->fetch_assoc()) {
 						?>
 							<li class="mdl-list__item mdl-list__item--two-line">
@@ -198,14 +199,24 @@ function convert_utf8( $string ) {
 									<?php if ($i === 1) { ?>
 											<i class="mdl-list__item-avatar" style="background: url(img/geel.png); float:right"></i>
 									<?php } ?>
-									<?php if ($wit_found === false && $u['uid'] === 1998) { ?>
+									<?php if ($wit_found === false && $u['uid'] === 1998) { 
+											$wit_found = true;
+									?>
 											<i class="mdl-list__item-avatar" style="background: url(img/wit.png); float:right"></i>
+									<?php } ?>
+									<?php if ($roze_found === false && $u['female'] === true) { 
+											$roze_found = true;
+									?>
+											<i class="mdl-list__item-avatar" style="background: url(img/roze.png); float:right"></i>
 									<?php } ?>
 									<?php if ($u['uid'] === $bollen_id) { ?>
 											<i class="mdl-list__item-avatar" style="background: url(img/bollen.png); float:right"></i>
 									<?php } ?>
 									<?php if ($u['uid'] === $groen_id) { ?>
 											<i class="mdl-list__item-avatar" style="background: url(img/groen.png); float:right"></i>
+									<?php } ?>
+									<?php if ($u['jaar'] === $ploeg) { ?>
+											<i class="mdl-list__item-avatar" style="background: url(img/team.png); float:right"></i>
 									<?php } ?>
 									<?php if ($u['jaar'] === $ploeg) { ?>
 											<i class="mdl-list__item-avatar" style="background: url(img/team.png); float:right"></i>
