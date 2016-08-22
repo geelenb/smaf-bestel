@@ -131,46 +131,49 @@ function convert_utf8( $string ) {
 										}
 
 										$prev_jaar = $u['jaar'];
-								?>
-								<tr data-naam="<?php echo strtoupper(convert_utf8($u['full_name'])); ?>">
-									<td>
-										<?php echo htmlentities(convert_utf8($u['full_name'])); ?>
-									</td>
-									<td class="icon-td">
-										<a href="#" 
-										   onclick="iconClicked(this)" 
-										   class='mdl-badge mdl-badge--overlap' 
-										   data-badge='<?php echo$u['cola'];?>' 
-										   data-uid='<?php echo $u['uid'];?>'
-										   data-drank='cola'
-										   data-naam='<?php echo htmlentities(convert_utf8($u['full_name']))?>'>
-											<img class='drink-icon' src="img/cola.jpg" />
-										</a>
-									</td>
-									<td class="icon-td">
-										<a href="#" 
-										   onclick="iconClicked(this)" 
-										   class='mdl-badge mdl-badge--overlap' 
-										   data-badge='<?php echo $u['bier'];?>' 
-										   data-uid='<?php echo $u['uid'];?>'
-										   data-drank='bier'
-										   data-naam='<?php echo htmlentities(convert_utf8($u['full_name']))?>'>
-											<img class='drink-icon' src="img/bier.png" />
-										</a>
-									</td>
-									<td class="icon-td">
-										<a href="#" 
-										   onclick="iconClicked(this)" 
-										   class='mdl-badge mdl-badge--overlap' 
-										   data-badge='<?php echo$u['duvel'];?>'
-										   data-uid='<?php echo $u['uid'];?>'
-										   data-drank='duvel'
-										   data-naam='<?php echo htmlentities(convert_utf8($u['full_name']))?>'>
-											<img class='drink-icon' src="img/duvel.png" />
-										</a>
-									</td>
-								</tr>
-								<?php
+										
+										echo '<tr data-naam=" ' . strtoupper(convert_utf8($u['full_name'])) . "\">\n";
+										# naam
+										echo '<td>' .
+										     htmlentities(convert_utf8($u['full_name'])) .
+										     "</td>\n";
+										# cola-knop
+										echo '<td class="icon-td">' .
+											 	'<a href="#" ' .
+													'onclick="iconClicked(this)" ' .
+													'class="mdl-badge mdl-badge--overlap" ' .
+													'data-drank="cola" ' .
+													'data-badge="' . $u['cola'] . '" ' .
+													'data-uid="' . $u['uid'] . '" ' .
+													'data-naam="' . htmlentities(convert_utf8($u['full_name'])) . '">' .
+													'<img class="drink-icon" src="img/cola.jpg" />' .
+											 	'</a>' .
+											"</td>\n";
+										# bier-knop
+										echo '<td class="icon-td">' .
+											 	'<a href="#" ' .
+													'onclick="iconClicked(this)" ' .
+													'class="mdl-badge mdl-badge--overlap" ' .
+													'data-drank="bier" ' .
+													'data-badge="' . $u['bier'] . '" ' .
+													'data-uid="' . $u['uid'] . '" ' .
+													'data-naam="' . htmlentities(convert_utf8($u['full_name'])) . '">' .
+													'<img class="drink-icon" src="img/bier.png" />' .
+											 	'</a>' .
+											"</td>\n";
+										# duvel-knop
+										echo '<td class="icon-td">' .
+											 	'<a href="#" ' .
+													'onclick="iconClicked(this)" ' .
+													'class="mdl-badge mdl-badge--overlap" ' .
+													'data-drank="duvel" ' .
+													'data-badge="' . $u['duvel'] . '" ' .
+													'data-uid="' . $u['uid'] . '" ' .
+													'data-naam="' . htmlentities(convert_utf8($u['full_name'])) . '">' .
+													'<img class="drink-icon" src="img/duvel.png" />' .
+											 	'</a>' .
+											"</td>\n";
+										echo "</tr>\n";
 									}
 								?>
 							</tbody>
@@ -180,7 +183,7 @@ function convert_utf8( $string ) {
 				<div id="progressbar" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>
 				<div id="snackbar" class="mdl-js-snackbar mdl-snackbar">
 				  <div class="mdl-snackbar__text"></div>
-				  <button id='snackbarbutton' class="mdl-snackbar__action" type="button"></button>
+				  <button id="snackbarbutton" class="mdl-snackbar__action" type="button"></button>
 				</div>
 			</section>
 			<section class="mdl-layout__tab-panel" id="ranking">
@@ -192,40 +195,45 @@ function convert_utf8( $string ) {
 							$wit_found = false;
 							$roze_found = false;
 							while($u = $q2->fetch_assoc()) {
-						?>
-							<li class="mdl-list__item mdl-list__item--two-line">
-								<span class="mdl-list__item-primary-content">
-									<i class="material-icons mdl-list__item-avatar" style="background: url(http://smaf.be/<?php echo $u['picture']?>)"></i>
-									<?php if ($i === 1) { ?>
-											<i class="mdl-list__item-avatar" style="background: url(img/geel.png); float:right"></i>
-									<?php } ?>
-									<?php if ($wit_found === false && $u['uid'] === 1998) { 
-											$wit_found = true;
-									?>
-											<i class="mdl-list__item-avatar" style="background: url(img/wit.png); float:right"></i>
-									<?php } ?>
-									<?php if ($roze_found === false && $u['female'] === true) { 
-											$roze_found = true;
-									?>
-											<i class="mdl-list__item-avatar" style="background: url(img/roze.png); float:right"></i>
-									<?php } ?>
-									<?php if ($u['uid'] === $bollen_id) { ?>
-											<i class="mdl-list__item-avatar" style="background: url(img/bollen.png); float:right"></i>
-									<?php } ?>
-									<?php if ($u['uid'] === $groen_id) { ?>
-											<i class="mdl-list__item-avatar" style="background: url(img/groen.png); float:right"></i>
-									<?php } ?>
-									<?php if ($u['jaar'] === $ploeg) { ?>
-											<i class="mdl-list__item-avatar" style="background: url(img/team.png); float:right"></i>
-									<?php } ?>
-									<?php if ($u['jaar'] === $ploeg) { ?>
-											<i class="mdl-list__item-avatar" style="background: url(img/team.png); float:right"></i>
-									<?php } ?>
-									<span><?php echo $i . '. 	' . convert_utf8($u['full_name']) ?></span>
-									<span class="mdl-list__item-sub-title"><?php echo $u['score'] ?> km</span>
-								</span>
-							</li>
-						<?php
+						
+								echo "\n" .
+								     '<li class="mdl-list__item mdl-list__item--two-line">' . 
+								     '<span class="mdl-list__item-primary-content">' .
+								     '<i class="material-icons mdl-list__item-avatar" style="background: url(http://smaf.be/' . $u['picture'] . ')"></i>';
+									
+								if ($i === 1) {
+									echo '<i class="mdl-list__item-avatar" style="background: url(img/geel.png); float:right"></i>';
+								}
+							
+								if ($wit_found === false && $u['uid'] === 1998) { 
+									$wit_found = true;
+									echo '<i class="mdl-list__item-avatar" style="background: url(img/wit.png); float:right"></i>';
+								}
+							
+								if ($roze_found === false && $u['female'] === true) { 
+									$roze_found = true;
+									echo '<i class="mdl-list__item-avatar" style="background: url(img/roze.png); float:right"></i>';
+								}
+							
+								if ($u['uid'] === $bollen_id) {
+									echo '<i class="mdl-list__item-avatar" style="background: url(img/bollen.png); float:right"></i>';
+								}
+							
+								if ($u['uid'] === $groen_id) {
+									echo '<i class="mdl-list__item-avatar" style="background: url(img/groen.png); float:right"></i>';
+								}
+							
+								if ($u['jaar'] === $ploeg) {
+									echo '<i class="mdl-list__item-avatar" style="background: url(img/team.png); float:right"></i>';
+								}
+							
+								if ($u['jaar'] === $ploeg) {
+									echo '<i class="mdl-list__item-avatar" style="background: url(img/team.png); float:right"></i>';
+								}
+										
+								echo '<span>' . $i . '. ' . convert_utf8($u['full_name']) . '</span>';
+								echo '<span class="mdl-list__item-sub-title">' . $u['score'] . ' km</span>';
+								echo '</span></li>';
 								$i++;
 							}
 						?>
