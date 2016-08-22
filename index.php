@@ -195,7 +195,6 @@ function convert_utf8( $string ) {
 							$wit_found = false;
 							$roze_found = false;
 							while($u = $q2->fetch_assoc()) {
-						
 								echo "\n" .
 								     '<li class="mdl-list__item mdl-list__item--two-line">' . 
 								     '<span class="mdl-list__item-primary-content">' .
@@ -210,7 +209,7 @@ function convert_utf8( $string ) {
 									echo '<i class="mdl-list__item-avatar" style="background: url(img/wit.png); float:right"></i>';
 								}
 							
-								if ($roze_found === false && $u['female'] === true) { 
+								if ($roze_found === false && $u['female']) { 
 									$roze_found = true;
 									echo '<i class="mdl-list__item-avatar" style="background: url(img/roze.png); float:right"></i>';
 								}
