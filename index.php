@@ -189,52 +189,52 @@ function convert_utf8( $string ) {
 			<section class="mdl-layout__tab-panel" id="ranking">
 				<div class="page-content">
 					<div class="mdl-card mdl-shadow--2dp" style="min-height: 0">
-					<ul class="demo-list-control mdl-list">
-						<?php
-							$i = 1;
-							$wit_found = false;
-							$roze_found = false;
-							while($u = $q2->fetch_assoc()) {
-								echo "\n" .
-								     '<li class="mdl-list__item mdl-list__item--two-line">' . 
-								     '<span class="mdl-list__item-primary-content">' .
-								     '<i class="material-icons mdl-list__item-avatar" style="background: url(http://smaf.be/' . $u['picture'] . ')"></i>';
-									
-								if ($i === 1) {
-									echo '<i class="mdl-list__item-avatar" style="background: url(img/geel.png); float:right"></i>';
-								}
-							
-								if ($wit_found === false && $u['uid'] === 1998) { 
-									$wit_found = true;
-									echo '<i class="mdl-list__item-avatar" style="background: url(img/wit.png); float:right"></i>';
-								}
-							
-								if ($roze_found === false && $u['female']) { 
-									$roze_found = true;
-									echo '<i class="mdl-list__item-avatar" style="background: url(img/roze.png); float:right"></i>';
-								}
-							
-								if ($u['uid'] === $bollen_id) {
-									echo '<i class="mdl-list__item-avatar" style="background: url(img/bollen.png); float:right"></i>';
-								}
-							
-								if ($u['uid'] === $groen_id) {
-									echo '<i class="mdl-list__item-avatar" style="background: url(img/groen.png); float:right"></i>';
-								}
-							
-								if ($u['jaar'] === $ploeg) {
-									echo '<i class="mdl-list__item-avatar" style="background: url(img/team.png); float:right"></i>';
-								}
+						<ul class="demo-list-control mdl-list">
+							<?php
+								$i = 1;
+								$wit_found = false;
+								$roze_found = false;
+								while($u = $q2->fetch_assoc()) {
+									echo "\n" .
+									     '<li class="mdl-list__item mdl-list__item--two-line">' . 
+									     '<span class="mdl-list__item-primary-content">' .
+									     '<i class="material-icons mdl-list__item-avatar" style="background: url(http://smaf.be/' . $u['picture'] . ')"></i>';
 										
-								echo '<span>' . $i . '. ' . convert_utf8($u['full_name']) . '</span>';
-								echo '<span class="mdl-list__item-sub-title">' . $u['score'] . ' km</span>';
-								echo '</span></li>';
-								$i++;
-							}
-						?>
-					</ul>
-				</div>
-			</section>
+									if ($i === 1) {
+										echo '<i class="mdl-list__item-avatar" style="background: url(img/geel.png); float:right"></i>';
+									}
+								
+									if ($wit_found === false && $u['uid'] === 1998) { 
+										$wit_found = true;
+										echo '<i class="mdl-list__item-avatar" style="background: url(img/wit.png); float:right"></i>';
+									}
+								
+									if ($roze_found === false && $u['female']) { 
+										$roze_found = true;
+										echo '<i class="mdl-list__item-avatar" style="background: url(img/roze.png); float:right"></i>';
+									}
+								
+									if ($u['uid'] === $bollen_id) {
+										echo '<i class="mdl-list__item-avatar" style="background: url(img/bollen.png); float:right"></i>';
+									}
+								
+									if ($u['uid'] === $groen_id) {
+										echo '<i class="mdl-list__item-avatar" style="background: url(img/groen.png); float:right"></i>';
+									}
+								
+									if ($u['jaar'] === $ploeg) {
+										echo '<i class="mdl-list__item-avatar" style="background: url(img/team.png); float:right"></i>';
+									}
+											
+									echo '<span>' . $i . '. ' . convert_utf8($u['full_name']) . '</span>';
+									echo '<span class="mdl-list__item-sub-title">' . $u['score'] . ' km</span>';
+									echo '</span></li>';
+									$i++;
+								}
+							?>
+						</ul>
+					</div>
+				</section>
 			</main>
 		</div>
 	</body>
