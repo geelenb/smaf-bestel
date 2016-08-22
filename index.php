@@ -226,10 +226,6 @@ function convert_utf8( $string ) {
 								if ($u['jaar'] === $ploeg) {
 									echo '<i class="mdl-list__item-avatar" style="background: url(img/team.png); float:right"></i>';
 								}
-							
-								if ($u['jaar'] === $ploeg) {
-									echo '<i class="mdl-list__item-avatar" style="background: url(img/team.png); float:right"></i>';
-								}
 										
 								echo '<span>' . $i . '. ' . convert_utf8($u['full_name']) . '</span>';
 								echo '<span class="mdl-list__item-sub-title">' . $u['score'] . ' km</span>';
