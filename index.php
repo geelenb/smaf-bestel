@@ -11,14 +11,39 @@ $query1 = "SELECT full_name, bier.*, jaar " .
 
 $q1 = $mysqli->query($query1);
 
-$query2 = "SELECT full_name, picture, (bier.cola + bier.bier + 2 * bier.duvel) as score " .
-         "FROM `bier` " .
-         "INNER JOIN users ON users.uid = bier.uid " .
-         "INNER JOIN users_groups on users_groups.uid = bier.uid " .
-         "WHERE users_groups.group_id = 14 " .
-         "ORDER BY score desc ;";
+$query2 = "SELECT users.uid, jaar, full_name, picture, (bier.cola + bier.bier + 2 * bier.duvel) as score " .
+          "FROM `bier` " .
+          "INNER JOIN users ON users.uid = bier.uid " .
+          "INNER JOIN users_groups on users_groups.uid = bier.uid " .
+          "WHERE users_groups.group_id = 14 " .
+          "ORDER BY score desc ;";
 
 $q2 = $mysqli->query($query2);
+
+$query_bollen = "SELECT uid FROM bier ORDER BY duvel DESC LIMIT 1";
+$bollen_id = $mysqli->query("$query_bollen")->fetch_assoc();
+if ($bollen_id) {
+	$bollen_id = $bollen_id['uid'];
+}
+
+$query_groen = "SELECT uid FROM bier ORDER BY cola DESC LIMIT 1";
+$groen_id = $mysqli->query("$query_groen")->fetch_assoc();
+if ($groen_id) {
+	$groen_id = $groen_id['uid'];
+}
+
+$query_wit = "SELECT uid FROM bier ORDER BY cola DESC LIMIT 1";
+$wit_id = $mysqli->query("$query_wit")->fetch_assoc();
+if ($wit_id) {
+	$wit_id = $wit_id['uid'];
+}
+
+$query_ploeg = "SELECT jaar, sum(cola + bier + 2 * duvel) as score FROM bier GROUP BY jaar ORDER BY score DESC LIMIT 1";
+$ploeg = $mysqli->query("$query_ploeg")->fetch_assoc();
+if ($ploeg) {
+	$ploeg = $ploeg['jaar'];
+}
+
 
 function convert_utf8( $string ) { 
     if ( strlen(utf8_decode($string)) == strlen($string) ) {   
@@ -64,16 +89,13 @@ function convert_utf8( $string ) {
 		<link rel="stylesheet" href="index.css" />
 		<script src='index.js'></script>
 		<style type="text/css">
-			main {
-				background: <?php # night theme
+			main { background: <?php # night theme
 								if (date("H") < '06' || date("H") > '18') {
 									echo '#222';
 								} else {
 									echo '#eee';
 								}
-							?>
-			}
-			
+							?> }
 		</style>
 	</head>
 	<body style='overflow: hidden;'>
@@ -167,12 +189,28 @@ function convert_utf8( $string ) {
 					<ul class="demo-list-control mdl-list">
 						<?php
 							$i = 1;
+							$wit_found = false;
 							while($u = $q2->fetch_assoc()) {
-
 						?>
 							<li class="mdl-list__item mdl-list__item--two-line">
 								<span class="mdl-list__item-primary-content">
 									<i class="material-icons mdl-list__item-avatar" style="background: url(http://smaf.be/<?php echo $u['picture']?>)"></i>
+									<?php if ($i === 1) { ?>
+											<i class="mdl-list__item-avatar" style="background: url(img/geel.png); float:right"></i>
+									<?php } ?>
+									<?php if ($wit_found === false && $u['uid'] === 1998) { ?>
+											<i class="mdl-list__item-avatar" style="background: url(img/wit.png); float:right"></i>
+									<?php } ?>
+									<?php if ($u['uid'] === $bollen_id) { ?>
+											<i class="mdl-list__item-avatar" style="background: url(img/bollen.png); float:right"></i>
+									<?php } ?>
+									<?php if ($u['uid'] === $groen_id) { ?>
+											<i class="mdl-list__item-avatar" style="background: url(img/groen.png); float:right"></i>
+									<?php } ?>
+									<?php if ($u['jaar'] === $ploeg) { ?>
+											<i class="mdl-list__item-avatar" style="background: url(img/team.png); float:right"></i>
+									<?php } ?>
+
 									<span><?php echo $i . '. 	' . convert_utf8($u['full_name']) ?></span>
 									<span class="mdl-list__item-sub-title"><?php echo $u['score'] ?> km</span>
 								</span>
