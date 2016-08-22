@@ -12,7 +12,8 @@ $query = "CREATE TABLE IF NOT EXISTS `bier` ( " .
          "  `bier` int(11) DEFAULT '0', " .
          "  `cola` int(11) DEFAULT '0', " .
          "  `duvel` int(11) DEFAULT '0', " .
-         "  `jaar` int(11) NOT NULL DEFAULT '1998'" .
+         "  `jaar` int(11) NOT NULL DEFAULT '1998', " .
+         "  `female` BOOLEAN DEFAULT '0' " .
          ") ENGINE=InnoDB; ";
 $mysqli->query($query);
 
