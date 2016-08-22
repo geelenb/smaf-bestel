@@ -188,6 +188,9 @@ function convert_utf8( $string ) {
 			</section>
 			<section class="mdl-layout__tab-panel" id="ranking">
 				<div class="page-content">
+					<div class="mdl-shadow--2dp" id="refreshbar">
+						<span><a id='refreshlink' href="./">Ververs</a> de pagina om de nieuwe stand te zien.</span>
+					</div>
 					<div class="mdl-card mdl-shadow--2dp" style="min-height: 0">
 						<ul class="demo-list-control mdl-list">
 							<?php
