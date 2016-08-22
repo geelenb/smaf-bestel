@@ -30,7 +30,7 @@ label {
 	margin: 0px auto 24px;
 	max-width: 95vw;
 	min-height: 12px;
-	/*break-inside: avoid-column;*/
+	break-inside: avoid-column;
 }
 
 td {
