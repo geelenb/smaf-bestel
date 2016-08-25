@@ -1,5 +1,24 @@
 * {
-	font-family: 'Karla', sans-serif !important; 
+	font-family: 'Raleway', sans-serif !important; 
+}
+
+header div {
+	background-color: #ffd600 !important;
+	color: white;
+}
+
+.mdl-layout.is-upgraded .mdl-layout__tab.is-active::after { /* lijntje onder tabs */
+	background: white !important;
+}
+
+.mdl-badge[data-badge]:after {  /* badges */
+	background: #ffd600;
+	color: white;
+}
+
+
+.mdl-snackbar__action { /* UNDO-knop*/
+	color: #ffd600;
 }
 
 span.mdl-layout-title {
@@ -71,7 +90,7 @@ i.mdl-list__item-avatar {
 }
 
 div#refreshbar {
-	background: #ffd600; 
+	background: #ffe141; 
 	z-index: 2;
 	position: relative;
 	padding: 12px;
