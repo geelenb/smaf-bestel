@@ -103,6 +103,14 @@ function convert_utf8( $string ) {
 			<header class="mdl-layout__header">
 				<div class="mdl-layout__header-row" style='padding: 0;'>
 					<span class="mdl-layout-title">SMAF Bier</span>
+					<?php if (isset($_GET['utm_source'])) { ?>
+						<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" onClick="window.location.reload()" style="position: absolute; right: 12px;">
+							<svg fill="#424242" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+							    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
+							    <path d="M0 0h24v24H0z" fill="none"/>
+							</svg>
+					    </button>
+				    <?php } ?>
 				</div>
 				<div class="mdl-layout__tab-bar mdl-js-ripple-effect">
 					<a href="#bestellen" class="mdl-layout__tab is-active">Bestellen</a>
@@ -189,7 +197,7 @@ function convert_utf8( $string ) {
 			<section class="mdl-layout__tab-panel" id="ranking">
 				<div class="page-content">
 					<div class="mdl-shadow--2dp" id="refreshbar" style="display: none">
-						<span><a id='refreshlink' href="./">Ververs</a> de pagina om de nieuwe stand te zien.</span>
+						<span><a id='refreshlink' onclick="window.location.reload()">Ververs</a> de pagina om de nieuwe stand te zien.</span>
 					</div>
 					<div class="mdl-card mdl-shadow--2dp" style="min-height: 0">
 						<ul class="demo-list-control mdl-list">
@@ -239,6 +247,36 @@ function convert_utf8( $string ) {
 					</div>
 				</section>
 			</main>
+		</div>
+		<?php if (!isset($_GET['utm_source']) && isset($_POST['wachtwoord']) && strpos(strtoupper($_SERVER['HTTP_USER_AGENT']), 'ANDROID') !== false) { ?>
+		<div style="background-color: #fff; position: fixed; right: 0; z-index: 5; width: initial; padding: 12px; margin: 12px;" class="mdl-card  mdl-shadow--2dp" onclick="this.remove()">
+			<p style="font-weight: bold;">Installeren als app? Klik</p>
+			<p style="margin: 0">
+				<svg fill="#424242" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+				    <path d="M0 0h24v24H0z" fill="none"/>
+				    <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+				</svg>
+				<svg fill="#424242" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+				    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+				    <path d="M0 0h24v24H0z" fill="none"/>
+				</svg>
+				Toevoegen aan startscherm
+			</p>
+		<?php } ?>
+		<?php if (!isset($_GET['utm_source']) && isset($_POST['wachtwoord']) && strpos($_SERVER['HTTP_USER_AGENT'], 'iPhone') !== false) { ?>
+		<div style="background-color: #ffc107; position: fixed; bottom: 12px; z-index: 5; width: 95%; max-width: 320px; padding: 12px; left: 50%; transform: translateX(-50%); margin: 0" class="mdl-card mdl-shadow--2dp" onclick="this.remove()">
+			<p style="font-weight: bold; font-size:larger; text-align: center;">Installeren als app? Klik</p>
+			<div style="position: relative; left: 50%; transform: translateX(-50%); display: table;">
+				<div style="float:left; height: 15vmin; width: 15vmin; background: white; border-radius: 20%;">
+					<img style="position: relative; left: 50%; top: 50%; height: 90%; transform: translate(-50%, -50%);" src="img/add-to-homescreen_action-icon-ios7.png">
+				</div>
+				<p style="float:left; margin: 12px;">
+					en dan
+				</p>
+				<div style="float:left; height: 15vmin; width: 15vmin; background: white; border-radius: 20%;">
+					<svg style="position: relative; left: 50%; top: 50%; height: 90%; transform: translate(-50%, -50%)" enable-background="new 0 0 50 50" height="50px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="50px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="none" height="50" width="50"/><line fill="none" stroke="#424242" stroke-miterlimit="10" stroke-width="4" x1="9" x2="41" y1="25" y2="25"/><line fill="none" stroke="#424242" stroke-miterlimit="10" stroke-width="4" x1="25" x2="25" y1="9" y2="41"/></svg>
+				</div>
+		<?php } ?>
 		</div>
 	</body>
 </html>

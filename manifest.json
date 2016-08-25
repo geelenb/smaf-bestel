@@ -18,5 +18,7 @@
 	"background_color": "#ffc107",
 	"theme_color": "#ffc107",
 	"orientation": "portrait-primary",
-	"scope": "/bier/"
+	"scope": "/bier/",
+	"lang": "nl-BE",
+	"start_url": "/bier/index.php?utm_source=web_app_manifest"
 }
