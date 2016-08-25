@@ -93,3 +93,14 @@ function filter(elem) {
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+	document.querySelector('.mdl-layout').addEventListener('mdl-componentupgraded', function(e) {
+        if (e.target.classList.contains('mdl-layout')) {
+            items = document.querySelectorAll('i.mdl-list__item-avatar')
+			for (var i = items.length - 1; i >= 0; i--) {
+				items[i].style.background = "url(" + items[i].dataset.image + ")"
+			}
+        }
+    });
+});

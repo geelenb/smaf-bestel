@@ -84,7 +84,6 @@ function convert_utf8( $string ) {
 
 		<!-- normale boel -->
 		<link rel="stylesheet" href="./material.min.css" />
-		<!-- <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.2.0/material.amber-yellow.min.css" /> -->
 		<link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet" async>
 		<link rel="stylesheet" href="index.css" />
 		<script src='index.js'></script>
@@ -215,7 +214,7 @@ function convert_utf8( $string ) {
 									echo "\n" .
 									     '<li class="mdl-list__item mdl-list__item--two-line">' . 
 									     '<span class="mdl-list__item-primary-content">' .
-									     '<i class="material-icons mdl-list__item-avatar" style="background: url(http://smaf.be/' . $u['picture'] . ')"></i>';
+									     '<i class="material-icons mdl-list__item-avatar" data-image="http://smaf.be/' . $u['picture'] . '"></i>';
 										
 									if ($i === 1) {
 										echo '<i class="mdl-list__item-avatar" style="background: url(img/geel.png); float:right"></i>';
