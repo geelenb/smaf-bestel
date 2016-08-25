@@ -265,7 +265,7 @@ function convert_utf8( $string ) {
 					</p>
 				</div>
 			<?php }
-			if (true || !isset($_GET['utm_source']) && isset($_POST['wachtwoord']) && strpos($_SERVER['HTTP_USER_AGENT'], 'iPhone') !== false) { ?>
+			if (!isset($_GET['utm_source']) && isset($_POST['wachtwoord']) && strpos($_SERVER['HTTP_USER_AGENT'], 'iPhone') !== false) { ?>
 				<div style="background-color: #ffc107; position: fixed; bottom: 12px; z-index: 5; width: 95%; max-width: 320px; padding: 12px; left: 50%; transform: translateX(-50%); margin: 0" class="mdl-card mdl-shadow--2dp" onclick="this.remove()">
 					<p style="font-weight: bold; font-size:larger; text-align: center;">Installeren als app? Klik</p>
 					<div style="position: relative; left: 50%; transform: translateX(-50%); display: table;">
