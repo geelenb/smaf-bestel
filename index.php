@@ -98,7 +98,7 @@ function convert_utf8( $string ) {
 			<?php if (isset($_GET['utm_source']) && strpos($_SERVER['HTTP_USER_AGENT'], 'iPhone') !== false) { ?>
 				body {
 					padding-top:20px; 
-					background: #ffc107;
+					background: #ffd600;
 				}
 			<?php } ?>
 		</style>
