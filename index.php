@@ -248,35 +248,42 @@ function convert_utf8( $string ) {
 				</section>
 			</main>
 		</div>
-		<?php if (!isset($_GET['utm_source']) && isset($_POST['wachtwoord']) && strpos(strtoupper($_SERVER['HTTP_USER_AGENT']), 'ANDROID') !== false) { ?>
-		<div style="background-color: #fff; position: fixed; right: 0; z-index: 5; width: initial; padding: 12px; margin: 12px;" class="mdl-card  mdl-shadow--2dp" onclick="this.remove()">
-			<p style="font-weight: bold;">Installeren als app? Klik</p>
-			<p style="margin: 0">
-				<svg fill="#424242" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-				    <path d="M0 0h24v24H0z" fill="none"/>
-				    <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
-				</svg>
-				<svg fill="#424242" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
-				    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-				    <path d="M0 0h24v24H0z" fill="none"/>
-				</svg>
-				Toevoegen aan startscherm
-			</p>
-		<?php } ?>
-		<?php if (!isset($_GET['utm_source']) && isset($_POST['wachtwoord']) && strpos($_SERVER['HTTP_USER_AGENT'], 'iPhone') !== false) { ?>
-		<div style="background-color: #ffc107; position: fixed; bottom: 12px; z-index: 5; width: 95%; max-width: 320px; padding: 12px; left: 50%; transform: translateX(-50%); margin: 0" class="mdl-card mdl-shadow--2dp" onclick="this.remove()">
-			<p style="font-weight: bold; font-size:larger; text-align: center;">Installeren als app? Klik</p>
-			<div style="position: relative; left: 50%; transform: translateX(-50%); display: table;">
-				<div style="float:left; height: 15vmin; width: 15vmin; background: white; border-radius: 20%;">
-					<img style="position: relative; left: 50%; top: 50%; height: 90%; transform: translate(-50%, -50%);" src="img/add-to-homescreen_action-icon-ios7.png">
+		<?php 
+			if (!isset($_GET['utm_source']) && isset($_POST['wachtwoord']) && strpos(strtoupper($_SERVER['HTTP_USER_AGENT']), 'ANDROID') !== false) { ?>
+				<div style="background-color: #fff; position: fixed; right: 0; z-index: 5; width: initial; padding: 12px; margin: 12px;" class="mdl-card  mdl-shadow--2dp" onclick="this.remove()">
+					<p style="font-weight: bold;">Installeren als app? Klik</p>
+					<p style="margin: 0">
+						<svg fill="#424242" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+						    <path d="M0 0h24v24H0z" fill="none"/>
+						    <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+						</svg>
+						<svg fill="#424242" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+						    <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+						    <path d="M0 0h24v24H0z" fill="none"/>
+						</svg>
+						Toevoegen aan startscherm
+					</p>
 				</div>
-				<p style="float:left; margin: 12px;">
-					en dan
-				</p>
-				<div style="float:left; height: 15vmin; width: 15vmin; background: white; border-radius: 20%;">
-					<svg style="position: relative; left: 50%; top: 50%; height: 90%; transform: translate(-50%, -50%)" enable-background="new 0 0 50 50" height="50px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="50px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><rect fill="none" height="50" width="50"/><line fill="none" stroke="#424242" stroke-miterlimit="10" stroke-width="4" x1="9" x2="41" y1="25" y2="25"/><line fill="none" stroke="#424242" stroke-miterlimit="10" stroke-width="4" x1="25" x2="25" y1="9" y2="41"/></svg>
-				</div>
-		<?php } ?>
-		</div>
+			<?php }
+			if (true || !isset($_GET['utm_source']) && isset($_POST['wachtwoord']) && strpos($_SERVER['HTTP_USER_AGENT'], 'iPhone') !== false) { ?>
+				<div style="background-color: #ffc107; position: fixed; bottom: 12px; z-index: 5; width: 95%; max-width: 320px; padding: 12px; left: 50%; transform: translateX(-50%); margin: 0" class="mdl-card mdl-shadow--2dp" onclick="this.remove()">
+					<p style="font-weight: bold; font-size:larger; text-align: center;">Installeren als app? Klik</p>
+					<div style="position: relative; left: 50%; transform: translateX(-50%); display: table;">
+						<div style="float:left; height: 15vmin; width: 15vmin; background: white; border-radius: 20%;">
+							<img style="position: relative; left: 50%; top: 50%; height: 90%; transform: translate(-50%, -50%);" src="img/add-to-homescreen_action-icon-ios7.png">
+						</div>
+						<p style="float:left; margin: 12px;">
+							en dan
+						</p>
+						<div style="float:left; height: 15vmin; width: 15vmin; background: white; border-radius: 20%;">
+							<svg style="position: relative; left: 50%; top: 50%; height: 90%; transform: translate(-50%, -50%)" enable-background="new 0 0 50 50" height="50px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="50px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+								<rect fill="none" height="50" width="50"/>
+								<line fill="none" stroke="#424242" stroke-miterlimit="10" stroke-width="4" x1="9" x2="41" y1="25" y2="25"/><line fill="none" stroke="#424242" stroke-miterlimit="10" stroke-width="4" x1="25" x2="25" y1="9" y2="41"/>
+							</svg>
+						</div>
+					</div>
+			<?php 
+				} 
+			?>
 	</body>
 </html>
