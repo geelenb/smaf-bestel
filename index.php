@@ -132,7 +132,7 @@ function convert_utf8( $string ) {
 
 										$prev_jaar = $u['jaar'];
 										
-										echo '<tr data-naam=" ' . strtoupper(convert_utf8($u['full_name'])) . "\">\n";
+										echo '<tr data-naam="' . strtoupper(convert_utf8($u['full_name'])) . "\">\n";
 										# naam
 										echo '<td>' .
 										     htmlentities(convert_utf8($u['full_name'])) .
