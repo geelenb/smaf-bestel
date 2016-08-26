@@ -214,7 +214,7 @@ function convert_utf8( $string ) {
 									echo "\n" .
 									     '<li class="mdl-list__item mdl-list__item--two-line">' . 
 									     '<span class="mdl-list__item-primary-content">' .
-									     '<i class="material-icons mdl-list__item-avatar" data-image="http://smaf.be/' . $u['picture'] . '"></i>';
+									     '<i class="material-icons mdl-list__item-avatar user_avatar" data-image="http://smaf.be/' . $u['picture'] . '"></i>';
 										
 									if ($i === 1) {
 										echo '<i class="mdl-list__item-avatar" style="background: url(img/geel.png); float:right"></i>';

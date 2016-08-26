@@ -97,7 +97,7 @@ function capitalizeFirstLetter(string) {
 document.addEventListener('DOMContentLoaded', function() {
 	document.querySelector('.mdl-layout').addEventListener('mdl-componentupgraded', function(e) {
         if (e.target.classList.contains('mdl-layout')) {
-            items = document.querySelectorAll('i.mdl-list__item-avatar')
+            items = document.querySelectorAll('i.user_avatar')
 			for (var i = items.length - 1; i >= 0; i--) {
 				items[i].style.background = "url(" + items[i].dataset.image + ")"
 			}
