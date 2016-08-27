@@ -7,6 +7,11 @@ header div {
 	color: white;
 }
 
+button {
+	position: absolute !important;
+	right: 4vw;
+}
+
 .mdl-layout.is-upgraded .mdl-layout__tab.is-active::after { /* lijntje onder tabs */
 	background: white !important;
 }
@@ -15,7 +20,6 @@ header div {
 	background: #ffd600;
 	color: white;
 }
-
 
 .mdl-snackbar__action { /* UNDO-knop*/
 	color: #ffd600;
@@ -71,8 +75,8 @@ div.name-cell {
 	position: relative;
 	padding: 0;
 	padding-left: 2vw;
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 
 .name {

@@ -103,6 +103,16 @@ document.addEventListener('DOMContentLoaded', function() {
 			for (var i = items.length - 1; i >= 0; i--) {
 				items[i].style.background = "url(" + items[i].dataset.image + ")"
 			}
+
+			// if ran from homescreen
+			if ((window.location.search.indexOf('utm_source') !== -1) || (window.navigator.standalone)) {
+				document.querySelector('#refreshbutton').style.visibility = "visible"
+				if ((/iphone|ipod|ipad/gi).test(navigator.platform) ) {
+					document.body.style.paddingTop = "20px"
+					document.querySelector('#yellowbar').style.height = "20px"
+				}
+			}
         }
     });
 });
+

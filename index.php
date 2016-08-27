@@ -82,7 +82,16 @@ function convert_utf8( $string ) {
 		<link rel="apple-touch-icon" sizes="120x120" href="img/touch/touch-icon-iphone-retina.png">
 		<link rel="apple-touch-icon" sizes="152x152" href="img/touch/touch-icon-ipad-retina.png">
 		<link rel="apple-touch-icon" sizes="2048x2048" href="img/touch/apple-touch-icon.png">
-		<link rel="apple-touch-startup-image" href="img/touch/startup.png">
+		<link rel="apple-touch-startup-image" sizes="320x480" href="img/touch/startup.png">
+		<link rel="apple-touch-startup-image" sizes="640x920" href="img/touch/640x920.png">
+		<link rel="apple-touch-startup-image" sizes="640x1096" href="img/touch/640x1096.png">
+		<link rel="apple-touch-startup-image" sizes="748x1024" href="img/touch/748x1024.png">
+		<link rel="apple-touch-startup-image" sizes="750x1294" href="img/touch/750x1294.png">
+		<link rel="apple-touch-startup-image" sizes="768x1004" href="img/touch/768x1004.png">
+		<link rel="apple-touch-startup-image" sizes="1182x2208" href="img/touch/1182x2208.png">
+		<link rel="apple-touch-startup-image" sizes="1242x2148" href="img/touch/1242x2148.png">
+		<link rel="apple-touch-startup-image" sizes="1496x2048" href="img/touch/1496x2048.png">
+		<link rel="apple-touch-startup-image" sizes="1536x2008" href="img/touch/1536x2008.png">
 
 		<meta name="msapplication-TileImage" content="img/touch/ms-touch-icon-144x144-precomposed.png">
 		<meta name="msapplication-TileColor" content="#ffd400">
@@ -100,27 +109,22 @@ function convert_utf8( $string ) {
 									echo '#eee';
 								}
 							?> }
-			<?php if (isset($_GET['utm_source']) && strpos($_SERVER['HTTP_USER_AGENT'], 'iPhone') !== false) { ?>
-				body {
-					padding-top:20px; 
-					background: #ffd600;
-				}
-			<?php } ?>
 		</style>
 	</head>
-	<body style='overflow: hidden;'>
+	<body style='overflow: hidden; background: #ffd600;'>
+		<div id="yellowbar"></div>
 		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-tabs">
 			<header class="mdl-layout__header">
 				<div class="mdl-layout__header-row" style='padding: 0;'>
 					<span class="mdl-layout-title">SMAF Bier</span>
-					<?php if (isset($_GET['utm_source'])) { ?>
-						<button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" onClick="window.location.reload()" style="position: absolute; right: 24px;">
+					<?php # if (isset($_GET['utm_source'])) { ?>
+						<button id="refreshbutton" style="visibility: hidden;" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" onClick="window.location.reload()" style="position: absolute; right: 24px;">
 							<svg fill="#fff" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
 							    <path d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/>
 							    <path d="M0 0h24v24H0z" fill="none"/>
 							</svg>
 					    </button>
-				    <?php } ?>
+				    <?php # } ?>
 				</div>
 				<div class="mdl-layout__tab-bar mdl-js-ripple-effect" style="transition: height 0.5s;">
 					<a href="#bestellen" class="mdl-layout__tab is-active">Bestellen</a>
