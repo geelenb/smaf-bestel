@@ -59,8 +59,11 @@ td {
 div.table {
 	padding: 6px;
 }
+
 div.row {
 	display: flex;
+	overflow: hidden;
+	transition: max-height .2s;
 }
 
 div.name-cell {

@@ -81,9 +81,9 @@ function filter(elem) {
 
 		// debugger
 		if (tr.dataset.naam.indexOf(elem.value.toUpperCase()) === -1) {
-			tr.style.display = "none"
+			tr.style.maxHeight = "0px";
 		} else {
-			tr.style.display = "flex"
+			tr.style.maxHeight = "60px";
 
 			// debugger;
 			kaart = tr.parentElement.parentElement
