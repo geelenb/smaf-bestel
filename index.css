@@ -12,6 +12,10 @@ button {
 	right: 4vw;
 }
 
+.mdl-layout__tab-bar a {
+	font-weight: bolder;
+}
+
 .mdl-layout.is-upgraded .mdl-layout__tab.is-active::after { /* lijntje onder tabs */
 	background: white !important;
 }
