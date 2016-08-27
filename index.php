@@ -71,15 +71,15 @@ function convert_utf8( $string ) {
 		<!-- Add to homescreen for Chrome on Android -->
 		<meta name="mobile-web-app-capable" content="yes">
 		<meta name="application-name" content="SMAF Bier">
-		<link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+		<link rel="icon" sizes="192x192" href="img/touch/chrome-touch-icon-192x192.png">
 
 		<!-- Add to homescreen for Safari on iOS -->
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 		<meta name="apple-mobile-web-app-title" content="SMAF Bier">
-		<link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+		<link rel="apple-touch-icon" href="img/touch/apple-touch-icon.png">
 
-		<meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+		<meta name="msapplication-TileImage" content="img/touch/ms-touch-icon-144x144-precomposed.png">
 		<meta name="msapplication-TileColor" content="#ffc107">
 
 		<!-- normale boel -->
@@ -279,10 +279,7 @@ function convert_utf8( $string ) {
 							en dan
 						</p>
 						<div style="float:left; height: 15vmin; width: 15vmin; background: white; border-radius: 20%;">
-							<svg style="position: relative; left: 50%; top: 50%; height: 90%; transform: translate(-50%, -50%)" enable-background="new 0 0 50 50" height="50px" id="Layer_1" version="1.1" viewBox="0 0 50 50" width="50px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-								<rect fill="none" height="50" width="50"/>
-								<line fill="none" stroke="#424242" stroke-miterlimit="10" stroke-width="4" x1="9" x2="41" y1="25" y2="25"/><line fill="none" stroke="#424242" stroke-miterlimit="10" stroke-width="4" x1="25" x2="25" y1="9" y2="41"/>
-							</svg>
+							<img style="position: relative; left: 50%; top: 50%; height: 90%; transform: translate(-50%, -50%);" src="img/add.svg">
 						</div>
 					</div>
 			<?php 
