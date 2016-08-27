@@ -56,7 +56,32 @@ td {
 	padding: 1vh 2vw;
 }
 
+div.table {
+	padding: 6px;
+}
+div.row {
+	display: flex;
+}
+
+div.name-cell {
+	flex-grow: 1;
+	position: relative;
+	padding: 0;
+	padding-left: 2vw;
+    display: flex;
+    align-items: center;
+}
+
+.name {
+	font-size: larger;
+	margin: 0;
+}
+
+div.cell {
+}
+
 .icon-td {
+	padding: 12px;
 	text-align: right;
 	padding-left: 0vw;
 }

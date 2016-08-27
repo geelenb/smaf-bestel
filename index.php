@@ -133,64 +133,62 @@ function convert_utf8( $string ) {
 					</div>
 
 					<div class="mdl-card mdl-shadow--2dp jaarkaart">
-						<table>
-							<tbody>
-								<?php
-									$prev_jaar = 0;
-									while($u = $q1->fetch_assoc()) {
-										if ($prev_jaar !== 0 && $prev_jaar != $u['jaar']) {
-											echo '</tbody></table></div>';
-											echo '<div class="mdl-card mdl-shadow--2dp jaarkaart"><table><tbody>';
-										}
-
-										$prev_jaar = $u['jaar'];
-										
-										echo '<tr data-naam="' . strtoupper(convert_utf8($u['full_name'])) . "\">\n";
-										# naam
-										echo '<td>' .
-										     htmlentities(convert_utf8($u['full_name'])) .
-										     "</td>\n";
-										# cola-knop
-										echo '<td class="icon-td">' .
-											 	'<a href="#" ' .
-													'onclick="iconClicked(this)" ' .
-													'class="mdl-badge mdl-badge--overlap" ' .
-													'data-drank="cola" ' .
-													'data-badge="' . $u['cola'] . '" ' .
-													'data-uid="' . $u['uid'] . '" ' .
-													'data-naam="' . htmlentities(convert_utf8($u['full_name'])) . '">' .
-													'<img class="drink-icon" src="img/cola.jpg" />' .
-											 	'</a>' .
-											"</td>\n";
-										# bier-knop
-										echo '<td class="icon-td">' .
-											 	'<a href="#" ' .
-													'onclick="iconClicked(this)" ' .
-													'class="mdl-badge mdl-badge--overlap" ' .
-													'data-drank="bier" ' .
-													'data-badge="' . $u['bier'] . '" ' .
-													'data-uid="' . $u['uid'] . '" ' .
-													'data-naam="' . htmlentities(convert_utf8($u['full_name'])) . '">' .
-													'<img class="drink-icon" src="img/bier.png" />' .
-											 	'</a>' .
-											"</td>\n";
-										# duvel-knop
-										echo '<td class="icon-td">' .
-											 	'<a href="#" ' .
-													'onclick="iconClicked(this)" ' .
-													'class="mdl-badge mdl-badge--overlap" ' .
-													'data-drank="duvel" ' .
-													'data-badge="' . $u['duvel'] . '" ' .
-													'data-uid="' . $u['uid'] . '" ' .
-													'data-naam="' . htmlentities(convert_utf8($u['full_name'])) . '">' .
-													'<img class="drink-icon" src="img/duvel.png" />' .
-											 	'</a>' .
-											"</td>\n";
-										echo "</tr>\n";
+						<div class="table">
+							<?php
+								$prev_jaar = 0;
+								while($u = $q1->fetch_assoc()) {
+									if ($prev_jaar !== 0 && $prev_jaar != $u['jaar']) {
+										echo '</div></div>';
+										echo '<div class="mdl-card mdl-shadow--2dp jaarkaart"><div class="table">';
 									}
-								?>
-							</tbody>
-						</table>
+
+									$prev_jaar = $u['jaar'];
+									
+									echo '<div class="row" data-naam="' . strtoupper(convert_utf8($u['full_name'])) . "\">\n";
+									# naam
+									echo '<div class="cell name-cell"><p class="name">' .
+									     htmlentities(convert_utf8($u['full_name'])) .
+									     "</p></div>\n";
+									# cola-knop
+									echo '<div class="icon-td cell">' .
+										 	'<a href="#" ' .
+												'onclick="iconClicked(this)" ' .
+												'class="mdl-badge mdl-badge--overlap" ' .
+												'data-drank="cola" ' .
+												'data-badge="' . $u['cola'] . '" ' .
+												'data-uid="' . $u['uid'] . '" ' .
+												'data-naam="' . htmlentities(convert_utf8($u['full_name'])) . '">' .
+												'<img class="drink-icon" src="img/cola.jpg" />' .
+										 	'</a>' .
+										"</div>\n";
+									# bier-knop
+									echo '<div class="icon-td cell">' .
+										 	'<a href="#" ' .
+												'onclick="iconClicked(this)" ' .
+												'class="mdl-badge mdl-badge--overlap" ' .
+												'data-drank="bier" ' .
+												'data-badge="' . $u['bier'] . '" ' .
+												'data-uid="' . $u['uid'] . '" ' .
+												'data-naam="' . htmlentities(convert_utf8($u['full_name'])) . '">' .
+												'<img class="drink-icon" src="img/bier.png" />' .
+										 	'</a>' .
+										"</div>\n";
+									# duvel-knop
+									echo '<div class="icon-td cell">' .
+										 	'<a href="#" ' .
+												'onclick="iconClicked(this)" ' .
+												'class="mdl-badge mdl-badge--overlap" ' .
+												'data-drank="duvel" ' .
+												'data-badge="' . $u['duvel'] . '" ' .
+												'data-uid="' . $u['uid'] . '" ' .
+												'data-naam="' . htmlentities(convert_utf8($u['full_name'])) . '">' .
+												'<img class="drink-icon" src="img/duvel.png" />' .
+										 	'</a>' .
+										"</div>\n";
+									echo "</div>\n";
+								}
+							?>
+						</div>
 					</div>
 				</div>
 				<div id="progressbar" class="mdl-progress mdl-js-progress mdl-progress__indeterminate"></div>

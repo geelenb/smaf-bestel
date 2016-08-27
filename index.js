@@ -75,16 +75,18 @@ function filter(elem) {
 		kaarten[i].style.display = 'none'
 	}
 
-	trs = document.querySelectorAll('#bestellen tr')
+	trs = document.querySelectorAll('#bestellen div.row')
 	for (var i = 0; i < trs.length; i++) {
 		tr = trs[i]
 
+		// debugger
 		if (tr.dataset.naam.indexOf(elem.value.toUpperCase()) === -1) {
 			tr.style.display = "none"
 		} else {
-			tr.style.display = "table-row"
+			tr.style.display = "flex"
 
-			kaart = tr.parentElement.parentElement.parentElement
+			// debugger;
+			kaart = tr.parentElement.parentElement
 			kaart.style.display = ''
 		}
 	}
