@@ -78,6 +78,12 @@ function convert_utf8( $string ) {
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 		<meta name="apple-mobile-web-app-title" content="SMAF Bier">
 		<link rel="apple-touch-icon" href="img/touch/apple-touch-icon.png">
+		<link rel="apple-touch-icon" href="touch-icon-iphone.png">
+		
+		<link rel="apple-touch-icon" sizes="76x76" href="touch-icon-ipad.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="touch-icon-iphone-retina.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad-retina.png">
+		<link rel="apple-touch-startup-image" href="/startup.png">
 
 		<meta name="msapplication-TileImage" content="img/touch/ms-touch-icon-144x144-precomposed.png">
 		<meta name="msapplication-TileColor" content="#ffc107">
