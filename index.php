@@ -109,6 +109,9 @@ function convert_utf8( $string ) {
 									echo '#eee';
 								}
 							?> }
+			<?php if (strpos($_SERVER['HTTP_USER_AGENT'], 'iPhone') !== false) { ?>
+ 				body { padding-top:20px; }
+ 			<?php } ?>
 		</style>
 	</head>
 	<body style='overflow: hidden; background: #ffd600;'>
