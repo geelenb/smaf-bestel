@@ -139,7 +139,7 @@ function convert_utf8( $string ) {
 				<div class="page-content">
 					<div class="mdl-card mdl-shadow--2dp">
 						<div class="mdl-textfield mdl-js-textfield" style='margin: auto'>
-							<input class="mdl-textfield__input" type="text" id="sample1" onkeyup="filter(this)">
+							<input class="mdl-textfield__input" type="text" id="sample1" onkeyup="filter(this)" autofocus>
 							<label class="mdl-textfield__label" for="sample1">Zoeken...</label>
 						</div>
 					</div>
