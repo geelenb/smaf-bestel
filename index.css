@@ -7,7 +7,7 @@ header div {
 	color: white;
 }
 
-button {
+#refreshbutton {
 	position: absolute !important;
 	right: 4vw;
 }
