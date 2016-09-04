@@ -23,7 +23,7 @@ function iconClicked(elem) {
 				snackbarbutton.setAttribute('data-uid', elem.dataset.uid);
 				var data = {
 					message: capitalizeFirstLetter(elem.dataset.drank) + ' voor ' + elem.dataset.naam + ' besteld',
-					timeout: 3000,
+					timeout: 5000,
 					actionHandler: undo,
 					actionText: 'Undo'
 				};
